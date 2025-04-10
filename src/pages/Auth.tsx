@@ -139,19 +139,19 @@ const Auth: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">NUDGE AI</h1>
+          <h1 className="text-3xl font-bold tracking-tight neon-text">NUDGE AI</h1>
           <p className="text-muted-foreground mt-2">Track your focus and get things done</p>
         </div>
         
         {showConfirmationAlert && (
-          <Alert className="mb-6 border-blue-600 bg-blue-50 dark:bg-blue-900/20">
-            <AlertCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-            <AlertTitle className="text-blue-600 dark:text-blue-400">Email confirmation required</AlertTitle>
-            <AlertDescription className="text-blue-600 dark:text-blue-400">
+          <Alert className="mb-6 border-neon-blue bg-black/30">
+            <AlertCircle className="h-4 w-4 text-neon-blue" />
+            <AlertTitle className="text-neon-blue">Email confirmation required</AlertTitle>
+            <AlertDescription className="text-neon-blue">
               Please check your email for a confirmation link. 
               <Button 
                 variant="link" 
-                className="text-blue-600 dark:text-blue-400 p-0 h-auto font-normal ml-1"
+                className="text-neon-blue p-0 h-auto font-normal ml-1"
                 onClick={handleResendConfirmation}
               >
                 Resend confirmation email
@@ -162,7 +162,7 @@ const Auth: React.FC = () => {
         
         <Card className="w-full">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Welcome</CardTitle>
+            <CardTitle className="text-2xl text-center neon-text">Welcome</CardTitle>
             <CardDescription className="text-center">
               Sign in to your account or create a new one
             </CardDescription>
@@ -185,7 +185,7 @@ const Auth: React.FC = () => {
                         id="email-signin"
                         type="email"
                         placeholder="you@example.com"
-                        className="pl-10"
+                        className="pl-10 bg-black/30 border-white/10"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -202,7 +202,7 @@ const Auth: React.FC = () => {
                       <Input
                         id="password-signin"
                         type="password"
-                        className="pl-10"
+                        className="pl-10 bg-black/30 border-white/10"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -212,7 +212,7 @@ const Auth: React.FC = () => {
                 </CardContent>
                 
                 <CardFooter>
-                  <Button type="submit" className="w-full button-shine" disabled={loading}>
+                  <Button type="submit" className="w-full neon-button" disabled={loading}>
                     {loading ? "Signing in..." : "Sign In"}
                   </Button>
                 </CardFooter>
@@ -230,7 +230,7 @@ const Auth: React.FC = () => {
                         id="email-signup"
                         type="email"
                         placeholder="you@example.com"
-                        className="pl-10"
+                        className="pl-10 bg-black/30 border-white/10"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -246,7 +246,7 @@ const Auth: React.FC = () => {
                         id="password-signup"
                         type="password"
                         placeholder="At least 6 characters"
-                        className="pl-10"
+                        className="pl-10 bg-black/30 border-white/10"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -262,7 +262,7 @@ const Auth: React.FC = () => {
                         id="confirm-password-signup"
                         type="password"
                         placeholder="Confirm your password"
-                        className="pl-10"
+                        className="pl-10 bg-black/30 border-white/10"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
@@ -272,7 +272,7 @@ const Auth: React.FC = () => {
                 </CardContent>
                 
                 <CardFooter>
-                  <Button type="submit" className="w-full button-shine" disabled={loading}>
+                  <Button type="submit" className="w-full neon-green-button" disabled={loading}>
                     {loading ? "Creating account..." : "Create Account"}
                   </Button>
                 </CardFooter>

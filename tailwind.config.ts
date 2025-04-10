@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				sans: ['Sora', 'Inter', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -65,12 +64,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				neon: {
+					blue: '#00FFFF',
+					green: '#39FF14',
+					pink: '#FF00FF',
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'2xl': '1rem',
+			},
+			boxShadow: {
+				'neon-blue': '0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.2)',
+				'neon-green': '0 0 5px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.2)',
+				'neon-pink': '0 0 5px rgba(255, 0, 255, 0.3), 0 0 10px rgba(255, 0, 255, 0.2)',
+				'neon-blue-hover': '0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)',
+				'neon-green-hover': '0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3)',
+				'neon-pink-hover': '0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -116,6 +129,30 @@ export default {
 					'50%': { 
 						boxShadow: '0 0 20px rgba(74, 222, 128, 0.6), 0 0 30px rgba(74, 222, 128, 0.4)' 
 					}
+				},
+				'glow-blue': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.2)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4)' 
+					}
+				},
+				'glow-green': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.2)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(57, 255, 20, 0.6), 0 0 30px rgba(57, 255, 20, 0.4)' 
+					}
+				},
+				'glow-pink': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px rgba(255, 0, 255, 0.3), 0 0 10px rgba(255, 0, 255, 0.2)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(255, 0, 255, 0.6), 0 0 30px rgba(255, 0, 255, 0.4)' 
+					}
 				}
 			},
 			animation: {
@@ -128,7 +165,10 @@ export default {
 				'pulse': 'pulse 1.5s ease-in-out infinite',
 				'scale': 'scale 0.2s ease-out',
 				'spin': 'spin 1.5s linear infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'glow-blue': 'glow-blue 2s ease-in-out infinite',
+				'glow-green': 'glow-green 2s ease-in-out infinite',
+				'glow-pink': 'glow-pink 2s ease-in-out infinite'
 			}
 		}
 	},
