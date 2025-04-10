@@ -40,17 +40,23 @@ const Auth: React.FC = () => {
       return;
     }
     
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
+    const { error } = await signIn(email, password);
+    
     if (error) {
       console.error('❌ SignIn Error:', error.message);
-      alert('Login Failed: ' + error.message);
+      
+      if (error.message === "Email not confirmed") {
+        setShowConfirmationAlert(true);
+      } else {
+        toast({
+          title: "Sign in failed",
+          description: error.message || "Please check your credentials and try again",
+          variant: "destructive",
+        });
+      }
     } else {
-      console.log('✅ Logged in:', data);
-      navigate('/dashboard');
+      console.log('✅ Logged in successfully');
+      // Navigation will be handled by AuthContext's onAuthStateChange
     }
   };
 
